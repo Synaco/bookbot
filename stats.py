@@ -19,4 +19,10 @@ def get_char_dict(text):
 
 
 def get_char_count(char_dict):
-    pass
+    char_dict_list = []
+    for key, value in char_dict.items():
+        char_dict_list.append({"key":key, "value":value})
+    def sort_on(dict):
+        return dict["value"]
+    char_dict_list.sort(reverse=True, key=sort_on)
+    return char_dict_list
