@@ -7,15 +7,16 @@ def get_word_count(text):
 
 def get_char_dict(text):
     char_dict = {}
-    for words in text:
-        for char in words:
-            if char.isalpha():
-               if char.lower() in char_dict:
-                   char_dict[char.lower()] += 1
-               else:
-                   char_dict[char.lower()] = 1
+    char_list = []
+    for char in text.split():
+        if char.isalpha():
+            char_list.append(char.lower())
+    for char in char_list:
+        if char in char_dict:
+            char_dict[char] += 1
+        else:
+            char_dict[char] = 1
     return char_dict
-
 
 
 def get_char_count(char_dict):
