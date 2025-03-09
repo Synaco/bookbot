@@ -4,23 +4,21 @@ from stats import get_char_count
 import sys
 
 def main():
-    #file_path = "books/frankenstein.txt"
     if len(sys.argv) != 2:
         print("Usage: python3 main.py <path_to_book>")
         return sys.exit(1)
-    text = get_book_text(file_path)
+    text = get_book_text(sys.argv[1])
     num_words = get_word_count(text.split())
     char_dict = get_char_dict(" ".join(text))
     results = get_char_count(char_dict)
     print("============ BOOKBOT ============")
-    print(f"Analyzing book found at {file_path}...")
+    print(f"Analyzing book found at {sys.argv[1]}...")
     print("----------- Word Count ----------")
     print(f"Found {num_words} total words")
     print("--------- Character Count -------")
     for dict in results:
         print(f"{dict["key"]}: {dict["value"]}")
     print("============= END ===============")
-    print(sys.argv)
 
 
 def get_book_text(path):
