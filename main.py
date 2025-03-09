@@ -11,7 +11,7 @@ def main():
     print("============ BOOKBOT ============")
     print(f"Analyzing book found at {file_path}...")
     print("----------- Word Count ----------")
-    print(f"{num_words} words found in the document")
+    print(f"Found {num_words} total words")
     print("--------- Character Count -------")
     for dict in results:
         print(f"{dict["key"]}: {dict["value"]}")
